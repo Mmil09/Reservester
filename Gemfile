@@ -32,6 +32,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'rmagick'
 
 gem 'rspec-rails', '~>3.0.0'
 

@@ -4,6 +4,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Full Address</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
+        <td><%= image_tag restaurant.image_url.to_s %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.description %></td>
         <td><%= restaurant.full_address %></td>
