@@ -36,6 +36,7 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rmagick'
 
 gem 'rspec-rails', '~>3.0.0'
+gem 'factory_girl'
 
 gem 'devise'
 
