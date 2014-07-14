@@ -82,4 +82,5 @@ class RestaurantsController < ApplicationController
     end
 
   end
+end
 
