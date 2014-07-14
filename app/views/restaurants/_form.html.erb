@@ -31,6 +31,10 @@
     <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
+  <br>or<br>
+  <div class="field">
+    <%= f.label :remote_image_url, "Image URL" %>
+    <%= f.text_field :remote_image_url %>
   <br>  
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>

@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-
+ # before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+ before_action :authenticate_owner!, except: [:index, :show]
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -25,8 +25,10 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.owner = current_owner
 
     respond_to do |format|
+      binding.pry
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
         format.json { render :show, status: :created, location: @restaurant }

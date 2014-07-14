@@ -37,6 +37,14 @@ gem 'rmagick'
 
 gem 'rspec-rails', '~>3.0.0'
 
+gem 'devise'
+
+group :development do
+  gem "better_errors"
+end
+
+gem 'pry-rails', :group => :development
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
