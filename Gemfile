@@ -32,6 +32,12 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
+
+gem 'nokogiri'
+
+gem 'libxml-ruby'
+
+gem 'fog'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rmagick'
 
