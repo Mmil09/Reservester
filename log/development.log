@@ -28973,3 +28973,194 @@ Processing by RestaurantsController#index as HTML
   Rendered devise/menu/_registration_items.html.erb (2.2ms)
   Rendered devise/menu/_login_items.html.erb (8.1ms)
 Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.6ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (23.0ms)
+  [1m[36mOwner Load (1.1ms)[0m  [1mSELECT  "owners".* FROM "owners"  WHERE "owners"."id" = 1  ORDER BY "owners"."id" ASC LIMIT 1[0m
+  Rendered devise/menu/_registration_items.html.erb (23.5ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 292ms (Views: 225.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:27 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:28 -0400
+
+
+Started GET "/restaurants/8/edit" for 127.0.0.1 at 2014-07-20 16:14:33 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mOwner Load (0.6ms)[0m  [1mSELECT  "owners".* FROM "owners"  WHERE "owners"."id" = 1  ORDER BY "owners"."id" ASC LIMIT 1[0m
+  Rendered restaurants/_form.html.erb (54.5ms)
+  Rendered restaurants/edit.html.erb within layouts/application (57.6ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 83.0ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/restaurants/8" for 127.0.0.1 at 2014-07-20 16:14:40 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ansHvzkxF+g1gfS4ghkhwPVGGMSuyIEqjzs1Bnen7Pw=", "restaurant"=>{"name"=>"Sam's", "description"=>"Sam's Rest", "full_address"=>"54 fdsfds st", "phone_number"=>"54353 534 543", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000003997b38 @tempfile=#<Tempfile:/tmp/RackMultipart20140720-22528-nucelq>, @original_filename="B_Restaurant.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"restaurant[image]\"; filename=\"B_Restaurant.jpg\"\r\nContent-Type: image/jpeg\r\n">, "image_cache"=>"", "remote_image_url"=>"", "remove_image"=>"0"}, "commit"=>"Submit", "id"=>"8"}
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mOwner Load (0.4ms)[0m  [1mSELECT  "owners".* FROM "owners"  WHERE "owners"."id" = 1  ORDER BY "owners"."id" ASC LIMIT 1[0m
+Unpermitted parameters: image_cache, remote_image_url, remove_image
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mRestaurant Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "restaurants"  WHERE ("restaurants"."name" = 'Sam''s' AND "restaurants"."id" != 8) LIMIT 1[0m
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "restaurants" SET "image" = $1, "updated_at" = $2 WHERE "restaurants"."id" = 8[0m  [["image", "B_Restaurant.jpg"], ["updated_at", "2014-07-20 20:14:40.966573"]]
+  [1m[35m (3.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants/8
+Completed 302 Found in 1171ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/restaurants/8" for 127.0.0.1 at 2014-07-20 16:14:41 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants"  WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered restaurants/show.html.erb within layouts/application (2.1ms)
+  [1m[35mOwner Load (0.5ms)[0m  SELECT  "owners".* FROM "owners"  WHERE "owners"."id" = 1  ORDER BY "owners"."id" ASC LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/framework_and_overrides.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/restaurants.css?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/restaurants.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 127.0.0.1 at 2014-07-20 16:14:42 -0400
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2014-07-20 16:14:44 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.4ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (10.4ms)
+  [1m[35mOwner Load (0.6ms)[0m  SELECT  "owners".* FROM "owners"  WHERE "owners"."id" = 1  ORDER BY "owners"."id" ASC LIMIT 1
+  Rendered devise/menu/_registration_items.html.erb (2.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 1.0ms)
