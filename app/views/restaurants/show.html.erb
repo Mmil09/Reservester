@@ -18,7 +18,8 @@
 </p>
 <p>
   <strong>Image:</strong>
-  <%= image_tag @restaurant.image_url(:masthead).to_s %>
+   <%= image_tag(@restaurant.image_url(:masthead).to_s) if @restaurant.image? %>
+  <% #= image_tag @restaurant.image_url(:masthead).to_s %>
 </p>
 
 
