@@ -22,8 +22,8 @@
         <td><%= restaurant.full_address %></td>
         <td><%= restaurant.phone_number %></td>
         <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) if owns?(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } if owns?(restaurant)%></td>
+        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) if owned?(restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } if owned?(restaurant) %></td>
       </tr>
     <% end %>
   </tbody>
