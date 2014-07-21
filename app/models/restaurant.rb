@@ -6,5 +6,5 @@ class Restaurant < ActiveRecord::Base
 	belongs_to :owner
 
 	validates_presence_of :name
-	validates_presence_of :owner_id
+	# validates_presence_of :owner_id
 end
