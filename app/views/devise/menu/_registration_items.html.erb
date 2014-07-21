@@ -1,6 +1,6 @@
 <% if owner_signed_in? %>
  
-  <%= button_to('Dashboard', dashboard_path, class:"btn btn-primary") %>
+  <%= button_to('Dashboard', dashboard_path, method: :get, class:"btn btn-primary") %>
   
 <% else %>
 
