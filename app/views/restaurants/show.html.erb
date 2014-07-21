@@ -21,8 +21,10 @@
    <%= image_tag(@restaurant.image_url(:masthead).to_s) if @restaurant.image? %>
   <% #= image_tag @restaurant.image_url(:masthead).to_s %>
 </p>
+<p>
+  <strong>Owned by:</strong>
+   <%= @restaurant.owner.email %>
+  <% #= image_tag @restaurant.image_url(:masthead).to_s %>
+</p>
 
-
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<%= render 'controls' %>
