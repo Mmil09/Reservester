@@ -5,7 +5,7 @@ class Owner < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :restaurants, dependent: :destroy
+  has_many :reservations, through: :restaurants
 
-  
-  
+   accepts_nested_attributes_for :restaurants
 end
