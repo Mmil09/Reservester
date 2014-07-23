@@ -27,4 +27,32 @@
   <% #= image_tag @restaurant.image_url(:masthead).to_s %>
 </p>
 
+ <% if @restaurant.owner == current_owner %>
+    <p>Reservations</p>
+    <div>
+      <div>
+        <table class="table table-hover table-striped table-condensed">
+          <tr>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Message</th>
+            <th></th>
+          </tr>
+         
+          <% @restaurant.reservations.each do |r| %>
+            <tr>
+              <td><%= r.email %></td>
+              <td><%= r.date %></td>
+              <td><%= r.time %></td>
+              <td><%= r.message %></td>
+              <td></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  <% end %>
+
 <%= render 'controls' %>
+ 

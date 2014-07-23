@@ -1,4 +1,4 @@
-<%= form_for @restaurant, :html => {:multipart => true} do |f| %>
+<%= form_for @restaurant, method: :patch, :html => {:multipart => true} do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
@@ -42,7 +42,26 @@
     <%= f.check_box :remove_image %>
     Remove Image
   </div>
-  <br>  
+  <br>
+
+  <br><br>
+
+   <%= f.fields_for :reservations do |t| %>
+  <fieldset>
+  <%= t.label :email, "Email" %><br />
+  <%= t.email_field :email %><br />
+  <%= t.label :date, "Date" %><br />
+  <%= t.date_field :date %><br />
+  <%= t.label :time, "Time" %><br />
+  <%= t.time_field :time %><br />
+  <%= t.label :message, "Time" %><br />
+  <%= t.text_field :message %><br />
+  <%= t.check_box :_destroy %>
+  <%= t.label :_destroy, "Destroy" %>
+  <%= t.hidden_field :restaurant_id %>
+  </fieldset>
+  <% end %>
+
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>

@@ -11,21 +11,25 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    #@reservation = Reservation.new
   end
 
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
+    #@restaurant.reservations = Reservation.new
   end
 
   # GET /restaurants/1/edit
   def edit
+      #@restaurant.reservations.build
   end
 
   # POST /restaurants
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
+
     @restaurant.owner = current_owner
 
     respond_to do |format|
@@ -72,6 +76,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image)
+      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image, reservations_attributes: [:email, :time, :date, :message, :restaurant_id])
     end
 end

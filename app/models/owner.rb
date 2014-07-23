@@ -7,5 +7,5 @@ class Owner < ActiveRecord::Base
   has_many :restaurants, dependent: :destroy
   has_many :reservations, through: :restaurants
 
-   accepts_nested_attributes_for :restaurants
+  # (is not needed b/c restaurant attr. are not needed on sign up page) accepts_nested_attributes_for :restaurants
 end
