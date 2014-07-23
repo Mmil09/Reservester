@@ -11,6 +11,6 @@ class Restaurant < ActiveRecord::Base
 	validates_presence_of :name
 	# validates_presence_of :owner_id
 
-	accepts_nested_attributes_for :reservations, allow_destroy: true, reject_if: :all_blank
+	accepts_nested_attributes_for :reservations, reject_if: :all_blank
 
 end

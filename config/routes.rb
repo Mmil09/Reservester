@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :owners
   resources :restaurants
+  resources :reservations
   
   get 'dashboard' => 'owners#dashboard'
   root 'restaurants#index'

@@ -27,6 +27,8 @@
   <% #= image_tag @restaurant.image_url(:masthead).to_s %>
 </p>
 
+
+
  <% if @restaurant.owner == current_owner %>
     <p>Reservations</p>
     <div>
@@ -46,13 +48,15 @@
               <td><%= r.date %></td>
               <td><%= r.time %></td>
               <td><%= r.message %></td>
-              <td></td>
+              <td>Edit</td>
+              <td><%= link_to 'Delete', reservation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </table>
       </div>
     </div>
   <% end %>
+
 
 <%= render 'controls' %>
  
