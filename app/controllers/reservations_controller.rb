@@ -30,7 +30,7 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully created.' }
+        format.html { redirect_to 'www.google.com', notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ReservationsController < ApplicationController
   def update
     respond_to do |format|
       if @reservation.update(reservation_params)
-        format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
+        format.html { redirect_to 'www.google.com', notice: 'Reservation was successfully updated.' }
         format.json { render :show, status: :ok, location: @reservation }
       else
         format.html { render :edit }
@@ -57,8 +57,9 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1.json
   def destroy
     @reservation.destroy
+    
     respond_to do |format|
-      format.html { redirect_to @restaurant, notice: 'Reservation was successfully destroyed.' }
+      format.html { redirect_to restaurant_path(@reservation.restaurant_id), notice: 'Reservation was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +72,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:email, :date, :time, :message, :restaurant_id)
+      params.require(:reservation).permit(:email, :date, :time, :message, :restaurant_id, :_destroy)
     end
 end

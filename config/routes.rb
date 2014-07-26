@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-
+  get 'reservations' => 'restaurants#index'
   devise_for :owners
   resources :restaurants
   resources :reservations
+  
   
   get 'dashboard' => 'owners#dashboard'
   root 'restaurants#index'

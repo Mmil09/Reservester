@@ -46,7 +46,7 @@
             <tr>
               <td><%= r.email %></td>
               <td><%= r.date %></td>
-              <td><%= r.time %></td>
+              <td><%= r.time.strftime('%l:%M %p') %></td>
               <td><%= r.message %></td>
               <td>Edit</td>
               <td><%= link_to 'Delete', reservation_path(r), method: :delete, data: { confirm: 'Are you sure?' } %></td>
