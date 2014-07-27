@@ -30,8 +30,12 @@ class ReservationsController < ApplicationController
 
     respond_to do |format|
       if @reservation.save
+        
+        ReservationMailer.reservation_notification(@restaurant).deliver
+
         format.html { redirect_to 'www.google.com', notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
+
       else
         format.html { render :new }
         format.json { render json: @reservation.errors, status: :unprocessable_entity }
@@ -57,7 +61,7 @@ class ReservationsController < ApplicationController
   # DELETE /reservations/1.json
   def destroy
     @reservation.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to restaurant_path(@reservation.restaurant_id), notice: 'Reservation was successfully destroyed.' }
       format.json { head :no_content }
