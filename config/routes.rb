@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   get 'reservations' => 'restaurants#index'
+  #get 'reservations', to: 'reservations#show'
   devise_for :owners
-  resources :restaurants
-  resources :reservations
+  resources :restaurants do 
+    resources :reservations
+  end
+
+  # resources :reservations, only: [:show, :index]
+
   
   
   get 'dashboard' => 'owners#dashboard'

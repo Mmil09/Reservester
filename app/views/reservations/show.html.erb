@@ -25,5 +25,5 @@
   <%= @reservation.restaurant_id %>
 </p>
 
-<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Edit', edit_restaurant_reservation_path(@reservation.restaurant_id, @reservation.id) %> |
 <%= link_to 'Back', :back %>

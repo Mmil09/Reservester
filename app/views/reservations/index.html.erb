@@ -1,4 +1,4 @@
-<h1>Listing reservations for <%= @restaurant %></h1>
+<h1>Listing reservations for <%= @restaurant.name %></h1>
 
 <table>
   <thead>
@@ -17,12 +17,13 @@
       <tr>
         <td><%= reservation.email %></td>
         <td><%= reservation.date %></td>
-        <td><%= reservation.time %></td>
+        <td><%= reservation.time.strftime('%l:%M %p') %></td>
         <td><%= reservation.message %></td>
         <td><%= reservation.restaurant_id %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', restaurant_reservation_path(@restaurant.id, reservation.id) %></td>
+        <td><%= link_to 'Edit', edit_restaurant_reservation_path(@restaurant.id, reservation.id) if owned?(@restaurant) %></td>
+        <td><%= link_to 'Destroy', restaurant_reservation_path(@restaurant.id, reservation.id), method: :delete, data: { confirm: 'Are you sure?' } if owned?(@restaurant) %></td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+<%= link_to 'New Reservation', new_restaurant_reservation_path %>

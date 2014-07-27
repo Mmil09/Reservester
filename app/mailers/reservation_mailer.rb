@@ -5,7 +5,7 @@ class ReservationMailer < ActionMailer::Base
   def reservation_notification(restaurant)
   	#break if restaurant.owner_id.blank?
   	#binding.pry
-   	@user = Owner.where(id: restaurant.owner_id)
+   	#@user = Owner.where(id: restaurant.owner_id)
     @url  = 'http://www.google.com'
     mail( :to => 'Mmil09@gmail.com',
     :subject => 'New Reservation' )
