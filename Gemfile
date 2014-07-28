@@ -32,6 +32,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
+gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'nokogiri'
 

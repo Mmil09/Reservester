@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_restaurant
 
-  
+  helper FormattedDateTimeHelper  
   # GET /reservations
   # GET /reservations.json
   def index
@@ -31,9 +31,7 @@ class ReservationsController < ApplicationController
     @reservation.restaurant_id = @restaurant.id
     respond_to do |format|
       if @reservation.save
-       
-        ReservationMailer.reservation_notification(@restaurant).deliver
-
+        ReservationMailer.reservation_notification(@restaurant, @reservation).deliver
         format.html { redirect_to @restaurant, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
 
