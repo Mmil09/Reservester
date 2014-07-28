@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
     @reservation.restaurant_id = @restaurant.id
     respond_to do |format|
       if @reservation.save
-        ReservationMailer.reservation_notification(@restaurant, @reservation).deliver
+        #ReservationMailer.reservation_notification(@restaurant, @reservation).deliver
         format.html { redirect_to @restaurant, notice: 'Reservation was successfully created.' }
         format.json { render :show, status: :created, location: @reservation }
 

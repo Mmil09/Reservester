@@ -7,6 +7,7 @@ class Restaurant < ActiveRecord::Base
 
 	belongs_to :owner
 	has_many :reservations, dependent: :destroy#, inverse_of: :restaurants
+	has_and_belongs_to_many :categories
 
 	validates_presence_of :name
 	# validates_presence_of :owner_id

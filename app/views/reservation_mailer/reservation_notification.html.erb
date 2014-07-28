@@ -12,8 +12,8 @@
     <p>
       <h2>Reservation info:</h2> 
       <br><%= @reservation.email %>
-      <br><%= @reservation.date %>
-      <br><%= @reservation.time %>
+      <br><%= dateFormat(@reservation.date) %>
+      <br><%= timeFormat(@reservation.time) %>
       <br><%= @reservation.message %>
     </p>
     <p>

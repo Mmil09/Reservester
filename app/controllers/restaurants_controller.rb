@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1/edit
   def edit
-      @restaurant.reservations.build
+      @reservations = Restaurant.find_by_id(@restaurant).reservations
   end
 
   # POST /restaurants
@@ -50,7 +50,7 @@ class RestaurantsController < ApplicationController
     respond_to do |format|
       if @restaurant.update(restaurant_params)
         
-        ReservationMailer.reservation_notification(@restaurant).deliver
+        #ReservationMailer.reservation_notification(@restaurant).deliver
         
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
         format.json { render :show, status: :ok, location: @restaurant }
@@ -79,6 +79,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image, reservations_attributes: [:email, :time, :date, :message, :restaurant_id, :_destroy])
+      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image, reservations_attributes: [:id, :email, :time, :date, :message, :restaurant_id, :_destroy], categories_attributes: [:name])
     end
 end
