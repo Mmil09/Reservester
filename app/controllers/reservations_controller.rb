@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :set_restaurant
 
-  helper FormattedDateTimeHelper  
+  #helper FormattedDateTimeHelper  
   # GET /reservations
   # GET /reservations.json
   def index

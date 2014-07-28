@@ -17,23 +17,20 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/new
   def new
     @restaurant = Restaurant.new
-    #@restaurant.reservations = Reservation.new
   end
 
   # GET /restaurants/1/edit
   def edit
       @reservations = Restaurant.find_by_id(@restaurant).reservations
+      @restaurant.reservations.build
   end
 
   # POST /restaurants
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
     @restaurant.owner = current_owner
-
-    respond_to do |format|
-      
+    respond_to do |format|      
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
         format.json { render :show, status: :created, location: @restaurant }
@@ -49,9 +46,6 @@ class RestaurantsController < ApplicationController
   def update
     respond_to do |format|
       if @restaurant.update(restaurant_params)
-        
-        #ReservationMailer.reservation_notification(@restaurant).deliver
-        
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
         format.json { render :show, status: :ok, location: @restaurant }
       else

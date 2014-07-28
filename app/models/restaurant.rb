@@ -3,6 +3,8 @@ class Restaurant < ActiveRecord::Base
 
 	validates_uniqueness_of :name
 	validates_presence_of :phone_number
+	validates :phone_number, length: { maximum: 20,
+    too_long: "%{count} characters is the maximum allowed" }
 	mount_uploader :image, ImageUploader
 
 	belongs_to :owner
