@@ -44,6 +44,7 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
+    
     respond_to do |format|
       if @restaurant.update(restaurant_params)
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
@@ -69,10 +70,11 @@ class RestaurantsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
+      #params[:restaurant][:category_ids] ||= []
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image, reservations_attributes: [:id, :email, :time, :date, :message, :restaurant_id, :_destroy], categories_attributes: [:name])
+      params.require(:restaurant).permit(:name, :description, :full_address, :phone_number, :image, :remove_image, reservations_attributes: [:id, :email, :time, :date, :message, :restaurant_id, :_destroy], categories_attributes: [:id, :name])
     end
 end
